@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features - CTPharmLink NG</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0070C0;
+            --secondary-color: #00B050;
+            --accent-color: #FF9900;
+            --light-gray: #f3f4f6;
+            --dark-gray: #4b5563;
+        }
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+        .accent-text {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+        }
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.375rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #005a9e;
+        }
+        .btn-secondary {
+            background-color: white;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.375rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .btn-secondary:hover {
+            background-color: var(--light-gray);
+        }
+        .feature-card {
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .active::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full z-10">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-bold text-gray-800">
+                        <span class="text-[#0070C0]">CTPharma</span><span class="text-[#00B050]">Link</span> <span class="text-[#FF9900]">NG</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link text-gray-800 hover:text-[#0070C0]">Home</a>
+                    <a href="about.html" class="nav-link text-gray-800 hover:text-[#0070C0]">About</a>
+                    <a href="executive-summary.html" class="nav-link text-gray-800 hover:text-[#0070C0]">Executive Summary</a>
+                    <a href="features.html" class="nav-link active text-gray-800 hover:text-[#0070C0]">Features</a>
+                    <a href="demo.html" class="nav-link text-gray-800 hover:text-[#0070C0]">Demo</a>
+                    <a href="team.html" class="nav-link text-gray-800 hover:text-[#0070C0]">Team</a>
+                    <a href="contact.html" class="nav-link text-gray-800 hover:text-[#0070C0]">Contact</a>
+                </div>
+                <div class="hidden md:block">
+                    <a href="demo.html" class="btn-primary">Try Demo</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-800 hover:text-[#0070C0] focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div id="mobile-menu" class="md:hidden hidden pt-4 pb-2">
+                <a href="index.html" class="block py-2 text-gray-800 hover:text-[#0070C0]">Home</a>
+                <a href="about.html" class="block py-2 text-gray-800 hover:text-[#0070C0]">About</a>
+                <a href="executive-summary.html" class="block py-2 text-gray-800 hover:text-[#0070C0]">Executive Summary</a>
+                <a href="features.html" class="block py-2 text-gray-800 hover:text-[#0070C0]">Features</a>
+                <a href="demo.html" class="block py-2 text-gray-800 hover:text-[#0070C0]">Demo</a>
+                <a href="team.html" class="block py-2 text-gray-800 hover:text-[#0070C0]">Team</a>
+                <a href="contact.html" class="block py-2 text-gray-800 hover:text-[#0070C0]">Contact</a>
+                <a href="demo.html" class="block py-2 mt-2 btn-primary inline-block">Try Demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="pt-32 pb-20 bg-gradient-to-r from-blue-50 to-green-50">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-gray-800">Platform Features</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Discover how CTPharmLink NG is revolutionizing healthcare in Nigeria
+            </p>
+        </div>
+    </section>
+
+    <!-- Medication Verification Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-8">
+                    <h2 class="text-3xl font-bold mb-4 text-[#0070C0]">Medication Verification</h2>
+                    <p class="text-gray-600 mb-6">
+                        Our blockchain-powered verification system uses VeChain technology to track medications from manufacturer to patient. Simply scan the QR code on your medication package or enter the verification code to instantly confirm authenticity.
+                    </p>
+                    <div class="bg-gray-50 p-6 rounded-lg mb-6">
+                        <h3 class="text-xl font-bold mb-3 text-gray-800">Key Benefits</h3>
+                        <ul class="list-disc pl-5 text-gray-600 space-y-2">
+                            <li>Instant verification of medication authenticity</li>
+                            <li>Complete medication history and origin information</li>
+                            <li>Integration with NAFDAC's Mobile Authentication Service</li>
+                            <li>Report counterfeit medications directly to authorities</li>
+                        </ul>
+                    </div>
+                    <a href="demo.html#verification" class="btn-primary">Try Verification Demo</a>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+                        <div class="bg-white p-4 rounded-lg mb-4">
+                            <h3 class="text-lg font-bold mb-2 text-gray-800">Medication Verification</h3>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 mb-2">Enter Verification Code</label>
+                                <div class="flex">
+                                    <input type="text" placeholder="e.g., NAF-12345-XYZ" class="w-full px-4 py-2 border rounded-l focus:outline-none focus:ring-2 focus:ring-[#0070C0]">
+                                    <button class="bg-[#0070C0] text-white px-4 py-2 rounded-r hover:bg-[#005a9e] focus:outline-none">
+                                        Verify
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="flex items-center">
+                                    <div class="mr-3">
+                                        <svg class="w-8 h-8 text-[#00B050]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-[#00B050]">Authentic Medication</h4>
+                                        <p class="text-sm text-gray-600">Verified via VeChain blockchain</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="border-t pt-4">
+                                <div class="grid grid-cols-2 gap-4 text-sm">
+                                    <div>
+                                        <p class="font-bold text-gray-700">Product Name:</p>
+                                        <p>Amoxicillin 500mg</p>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-gray-700">Manufacturer:</p>
+                                        <p>PharmaCorp Ltd.</p>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-gray-700">Batch Number:</p>
+                                        <p>BN-2025-04-123</p>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-gray-700">Expiry Date:</p>
+                                        <p>April 2027</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-sm text-gray-500">Demo interface - Actual verification results will include additional details</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Insurance Claims Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row-reverse items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pl-8">
+                    <h2 class="text-3xl font-bold mb-4 text-[#00B050]">Insurance Claims Processing</h2>
+                    <p class="text-gray-600 mb-6">
+                        CTPharmLink NG connects directly with HMOs and NHIS to verify coverage, process claims, and reduce out-of-pocket expenses for medications.
+                    </p>
+                    <div class="bg-white p-6 rounded-lg mb-6">
+                        <h3 class="text-xl font-bold mb-3 text-gray-800">Key Benefits</h3>
+                        <ul class="list-disc pl-5 text-gray-600 space-y-2">
+                            <li>Real-time insurance coverage verification</li>
+                            <li>Automated claims submission</li>
+                            <li>Reduced waiting time for reimbursements</li>
+                            <li>Transparent pricing and coverage information</li>
+                        </ul>
+                    </div>
+                    <a href="demo.html#insurance" class="btn-primary">Try Insurance Demo</a>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+                        <div class="bg-white p-4 rounded-lg mb-4">
+                            <h3 class="text-lg font-bold mb-2 text-gray-800">Insurance Coverage Check</h3>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 mb-2">Select HMO Provider</label>
+                                <select class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-[#00B050]">
+                                    <option>Select HMO</option>
+                                    <option>Hygeia HMO</option>
+                                    <option>Avon HMO</option>
+                                    <option>Reliance HMO</option>
+                                    <option>NHIS</option>
+                                </select>
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 mb-2">Policy/ID Number</label>
+                                <input type="text" placeholder="Enter your policy number" class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-[#00B050]">
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 mb-2">Medication</label>
+                                <input type="text" placeholder="Enter medication name" class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-[#00B050]">
+                            </div>
+                            <button class="w-full bg-[#00B050] text-white px-4 py-2 rounded hover:bg-[#009040] focus:outline-none">
+                                Check Coverage
+                            </button>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-sm text-gray-500">Demo interface - Actual system will connect to HMO databases</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pharmacy Finder Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-8">
+                    <h2 class="text-3xl font-bold mb-4 text-[#FF9900]">Pharmacy Finder</h2>
+                    <p class="text-gray-600 mb-6">
+                        Locate verified pharmacies near you, check medication availability, and arrange for pickup or delivery.
+                    </p>
+                    <div class="bg-gray-50 p-6 rounded-lg mb-6">
+                        <h3 class="text-xl font-bold mb-3 text-gray-800">Key Benefits</h3>
+                        <ul class="list-disc pl-5 text-gray-600 space-y-2">
+                            <li>Geolocation-based pharmacy search</li>
+                            <li>Medication availability information</li>
+                            <li>Delivery options through partner logistics providers</li>
+                            <li>Pharmacy ratings and reviews</li>
+                        </ul>
+                    </div>
+                    <a href="demo.html#pharmacy-finder" class="btn-primary">Try Pharmacy Finder Demo</a>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+                        <div class="bg-white p-4 rounded-lg mb-4">
+                            <h3 class="text-lg font-bold mb-2 text-gray-800">Find Nearby Pharmacies</h3>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 mb-2">Location</label>
+                                <div class="flex">
+                                    <input type="text" placeholder="Lagos, Nigeria" class="w-full px-4 py-2 border rounded-l focus:outline-none focus:ring-2 focus:ring-[#FF9900]">
+                                    <button class="bg-[#FF9900] text-white px-4 py-2 rounded-r hover:bg-[#e68a00] focus:outline-none">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="h-40 bg-gray-200 rounded-lg flex items-center justify-center">
+                                    <p class="text-gray-500">Map View</p>
+                                </div>
+                            </div>
+                            <div class="border-t pt-4">
+                                <div class="mb-3 p-3 border rounded hover:bg-gray-50 cursor-pointer">
+                                    <div class="flex justify-between">
+                                        <h4 class="font-bold">HealthPlus Pharmacy</h4>
+                                        <span class="text-sm text-gray-600">1.2 km</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600">123 Awolowo Road, Ikoyi</p>
+                                    <div class="flex items-center mt-1">
+                                        <div class="flex text-yellow-400">
+                                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                            </svg>
+                                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                            </svg>
+                                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                            </svg>
+                                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                            </svg>
+                                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                            </svg>
+                                        </div>
+                                        <span class="text-sm text-gray-600 ml-1">4.8 (120 reviews)</span>
+                                    </div>
+                                </div>
+                                <div class="p-3 border rounded hover:bg-gray-50 cursor-pointer">
+                                    <div class="flex justify-between">
+                                        <h4 class="font-bold">MedPlus Pharmacy</h4>
+                                        <span class="text-sm text-gray-600">2.5 km</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600">45 Adeola Odeku St, Victoria Island</p>
+                                    <div class="flex items-center mt-1">
+                                        <div class="flex text-yellow-400">
+                                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                            </svg>
+                                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                            </svg>
+                                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                            </svg>
+                                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                            </svg>
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
+                                            </svg>
+                                        </div>
+                                        <span class="text-sm text-gray-600 ml-1">4.2 (85 reviews)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-sm text-gray-500">Demo interface - Actual system will show real-time pharmacy data</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Disease Prediction Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row-reverse items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pl-8">
+                    <h2 class="text-3xl font-bold mb-4 text-purple-600">AI-Powered Health Insights</h2>
+                    <p class="text-gray-600 mb-6">
+                        Our advanced AI analytics provide disease outbreak predictions, personalized health recommendations, and medication reminders.
+                    </p>
+                    <div class="bg-white p-6 rounded-lg mb-6">
+                        <h3 class="text-xl font-bold mb-3 text-gray-800">Key Benefits</h3>
+                        <ul class="list-disc pl-5 text-gray-600 space-y-2">
+                            <li>Early warning for disease outbreaks in your area</li>
+                            <li>Personalized medication and health recommendations</li>
+                            <li>Medication adherence reminders</li>
+                            <li>Health trend analysis</li>
+                        </ul>
+                    </div>
+                    <a href="demo.html#health-insights" class="btn-primary">Try Health Insights Demo</a>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+                        <div class="bg-white p-4 rounded-lg mb-4">
+                            <h3 class="text-lg font-bold mb-2 text-gray-800">Disease Outbreak Predictions</h3>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 mb-2">Location</label>
+                                <select class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-purple-500">
+                                    <option>Lagos</option>
+                                    <option>Abuja</option>
+                                    <option>Taraba</option>
+                                    <option>Kaduna</option>
+                                </select>
+                            </div>
+                            <div class="border-t pt-4">
+                                <div class="mb-3 p-3 border rounded bg-yellow-50">
+                                    <div class="flex items-center">
+                                        <div class="w-2 h-2 bg-yellow-500 rounded-full mr-2"></div>
+                                        <h4 class="font-bold">Malaria</h4>
+                                        <span class="ml-auto text-sm font-bold text-yellow-600">Medium Risk</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600 mt-1">Increased cases reported in Lekki, Ajah areas</p>
+                                    <p class="text-sm font-bold mt-2">Recommended Medications:</p>
+                                    <p class="text-sm text-gray-600">Artemether/Lumefantrine, Artesunate</p>
+                                </div>
+                                <div class="mb-3 p-3 border rounded bg-red-50">
+                                    <div class="flex items-center">
+                                        <div class="w-2 h-2 bg-red-500 rounded-full mr-2"></div>
+                                        <h4 class="font-bold">Typhoid Fever</h4>
+                                        <span class="ml-auto text-sm font-bold text-red-600">High Risk</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600 mt-1">Outbreak detected in Ikeja, Surulere areas</p>
+                                    <p class="text-sm font-bold mt-2">Recommended Medications:</p>
+                                    <p class="text-sm text-gray-600">Ciprofloxacin, Azithromycin</p>
+                                </div>
+                                <div class="p-3 border rounded bg-green-50">
+                                    <div class="flex items-center">
+                                        <div class="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+                                        <h4 class="font-bold">Cholera</h4>
+                                        <span class="ml-auto text-sm font-bold text-green-600">Low Risk</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600 mt-1">Few isolated cases, no significant spread</p>
+                                    <p class="text-sm font-bold mt-2">Recommended Medications:</p>
+                                    <p class="text-sm text-gray-600">Oral Rehydration Salts, Doxycycline</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-sm text-gray-500">Demo interface - Actual system will use real-time disease data</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inventory Management Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-8">
+                    <h2 class="text-3xl font-bold mb-4 text-[#0070C0]">Inventory Management</h2>
+                    <p class="text-gray-600 mb-6">
+                        For pharmacy partners, our platform provides intelligent inventory management to reduce waste, prevent stockouts, and optimize medication availability.
+                    </p>
+                    <div class="bg-gray-50 p-6 rounded-lg mb-6">
+                        <h3 class="text-xl font-bold mb-3 text-gray-800">Key Benefits</h3>
+                        <ul class="list-disc pl-5 text-gray-600 space-y-2">
+                            <li>Predictive inventory management</li>
+                            <li>Expiration date tracking</li>
+                            <li>Automated reordering suggestions</li>
+                            <li>Demand forecasting based on disease trends</li>
+                        </ul>
+                    </div>
+                    <a href="demo.html#inventory" class="btn-primary">Try Inventory Demo</a>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+                        <div class="bg-white p-4 rounded-lg mb-4">
+                            <h3 class="text-lg font-bold mb-2 text-gray-800">Inventory Dashboard</h3>
+                            <div class="mb-4">
+                                <div class="flex justify-between items-center mb-2">
+                                    <h4 class="font-bold text-gray-700">Inventory Status</h4>
+                                    <span class="text-sm text-gray-500">Last updated: Today, 10:45 AM</span>
+                                </div>
+                                <div class="h-4 bg-gray-200 rounded-full">
+                                    <div class="h-4 bg-[#0070C0] rounded-full" style="width: 75%"></div>
+                                </div>
+                                <div class="flex justify-between text-sm mt-1">
+                                    <span>0 items</span>
+                                    <span>75% stocked</span>
+                                    <span>100%</span>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <h4 class="font-bold text-gray-700 mb-2">Low Stock Alerts</h4>
+                                <div class="space-y-2">
+                                    <div class="flex justify-between p-2 bg-red-50 rounded">
+                                        <span>Amoxicillin 500mg</span>
+                                        <span class="font-bold text-red-600">5 units left</span>
+                                    </div>
+                                    <div class="flex justify-between p-2 bg-yellow-50 rounded">
+                                        <span>Paracetamol 500mg</span>
+                                        <span class="font-bold text-yellow-600">12 units left</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <h4 class="font-bold text-gray-700 mb-2">Expiring Soon</h4>
+                                <div class="space-y-2">
+                                    <div class="flex justify-between p-2 bg-orange-50 rounded">
+                                        <span>Ciprofloxacin 500mg</span>
+                                        <span class="font-bold text-orange-600">Expires in 30 days</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-700 mb-2">Reorder Recommendations</h4>
+                                <div class="p-2 bg-green-50 rounded">
+                                    <p class="text-sm">Based on disease trends in your area, we recommend stocking up on <span class="font-bold">Artemether/Lumefantrine</span> and <span class="font-bold">Ciprofloxacin</span>.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-sm text-gray-500">Demo interface - Actual system will connect to pharmacy inventory</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="py-16 bg-[#0070C0] text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4">Ready to Experience CTPharmLink NG?</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">
+                Try our interactive demo to see how CTPharmLink NG is revolutionizing medication access in Nigeria.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="demo.html" class="bg-white text-[#0070C0] px-6 py-3 rounded-lg font-bold hover:bg-gray-100 transition duration-300">Launch Demo</a>
+                <a href="contact.html" class="bg-transparent border-2 border-white text-white px-6 py-3 rounded-lg font-bold hover:bg-white hover:text-[#0070C0] transition duration-300">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">CTPharmLink NG</h3>
+                    <p class="mb-4">
+                        Revolutionizing access to safe, affordable, and insured medications in Nigeria.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white hover:text-[#FF9900]">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-white hover:text-[#FF9900]">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-white hover:text-[#FF9900]">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-[#FF9900]">Home</a></li>
+                        <li><a href="about.html" class="hover:text-[#FF9900]">About</a></li>
+                        <li><a href="executive-summary.html" class="hover:text-[#FF9900]">Executive Summary</a></li>
+                        <li><a href="features.html" class="hover:text-[#FF9900]">Features</a></li>
+                        <li><a href="demo.html" class="hover:text-[#FF9900]">Demo</a></li>
+                        <li><a href="team.html" class="hover:text-[#FF9900]">Team</a></li>
+                        <li><a href="contact.html" class="hover:text-[#FF9900]">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            <span>Lagos, Nigeria</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            <span>info@ctpharmlink.ng</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                            </svg>
+                            <span>+234 (0) 123 456 7890</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Newsletter</h3>
+                    <p class="mb-4">
+                        Subscribe to our newsletter for updates on our progress and impact.
+                    </p>
+                    <form>
+                        <div class="flex">
+                            <input type="email" placeholder="Your email" class="px-4 py-2 w-full rounded-l focus:outline-none text-gray-800">
+                            <button type="submit" class="bg-[#FF9900] px-4 py-2 rounded-r hover:bg-[#e68a00] focus:outline-none">
+                                Subscribe
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p>&copy; 2025 CTPharmLink NG. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
